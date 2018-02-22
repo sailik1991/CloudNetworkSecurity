@@ -29,4 +29,4 @@ def getShares():
     return render_template('success.html')
 
 if __name__ == '__main__':
-    app.run(host='10.218.104.97',port=5010)
+    app.run(host='192.168.1.12',port=5002)
