@@ -1,0 +1,36 @@
+{% include 'header.html' %}  
+    <br>
+    <div class="page-header">
+    <h3>
+        You have come back from an awesome trip with your friends. Now, you need to add the expenses!  Don't feel like doing it?  Let us help.
+    </h3>
+    </div>
+    <br><br> 
+    <form action="/getShares" method="get">
+        <div class="input-group">
+        <!--
+        <span class="input-group-addon" id="basic-addon1">
+            <span class="glyphicon glyphicon-usd"></span>
+        </span>
+        -->
+        <input name="bills" type="text" class='form-control' placeholder="Enter bill amounts. Eg. 23.12, 12.23, 90">
+        </div>
+        <br><br>
+        <div class="input-group">
+        <!--
+        <span class="input-group-addon" id="basic-addon1">
+            <span class="glyphicon glyphicon-user"></span>
+        </span>
+        -->
+        <input name="shares" type="number" class='form-control' placeholder="No. of shares. Eg. 5">
+        </div>
+        <br><br>
+        <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">@</span>
+        <input name="email" type="email" class='form-control' placeholder="Enter your email Eg. john@doe.com">
+        </div>
+        <br><br>
+        <button class='btn btn-default btn-lg'>Calculate Shares</button>
+    </form> 
+  </body>
+{% include 'footer.html' %}
