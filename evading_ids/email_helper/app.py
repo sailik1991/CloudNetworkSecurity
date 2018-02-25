@@ -36,4 +36,4 @@ def get_bill_total():
     return 'success'  
 
 if __name__ == '__main__':
-    app.run(host='10.218.104.97',port=5001)
+    app.run(host='192.168.2.14',port=5000)
