@@ -1,4 +1,16 @@
 {% include 'header.html' %}  
+    {% if message_f %}
+    <br>
+    <div class="alert alert-danger">
+        {{message_f}}
+    </div>
+    {% endif %}
+    {% if message_s %}
+    <br>
+    <div class="alert alert-success">
+        {{message_s}}
+    </div>
+    {% endif %}
     <br>
     <div class="page-header">
     <h3>

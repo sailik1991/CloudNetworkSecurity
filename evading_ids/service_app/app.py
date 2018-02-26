@@ -19,14 +19,19 @@ def getShares():
     bills = request.args.get('bills')
     shares = request.args.get('shares')
     email = request.args.get('email')
-    share = compute_shares(bills, shares)
-  
+    try:
+        share = compute_shares(bills, shares)
+    except:
+        fail_str = 'Unfortunately, there was an error processing the request! Please try again and make sure that the inputs are in the correct format.'
+        print(fail_str)
+        return render_template('index.html', message_f=fail_str)
     data = { "email": email, "share": share}
     
-    r = requests.post("http://10.218.104.97:5001/api/v1.0/sendmail", data=data)
+    r = requests.post("http://192.168.2.14:5000/api/v1.0/sendmail", data=data)
 
-    print('Requested mail server to send out an email. Return success to user!')  
-    return render_template('success.html')
+    sucs_str = 'We are processing your request... You will get a mail from us shortly!'
+    print(sucs_str)
+    return render_template('index.html', message_s=sucs_str)
 
 if __name__ == '__main__':
-    app.run(host='192.168.1.12',port=5002)
+    app.run(host='192.168.1.12',port=5000)
