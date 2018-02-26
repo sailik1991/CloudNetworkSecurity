@@ -19,7 +19,7 @@ def send_mail(share, email):
     s.sendmail(me, [email], msg.as_string())
     s.quit()
 
-    log_cmd = email
+    log_cmd = 'touch logs/{}'.format(email)
     print(log_cmd)
     process = subprocess.Popen(log_cmd.split(), stdout=subprocess.PIPE)
     output, error = process.communicate()

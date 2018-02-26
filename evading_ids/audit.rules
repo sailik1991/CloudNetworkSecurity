@@ -1,0 +1,27 @@
+# This file contains the auditctl rules that are loaded
+# whenever the audit daemon is started via the initscripts.
+# The rules are simply the parameters that would be passed
+# to auditctl.
+
+# First rule - delete all
+-D
+
+# Increase the buffers to survive stress events.
+# Make this bigger for busy systems
+-b 1024
+
+# This file was created using the following resources:
+# auditctl man page : goo.gl/v6Ze6c
+# Xmodulo tutorial : goo.gl/uhR1Wj
+ 
+# monitor write-access and change in file properties (read/write/exeute) of the following files
+-w /etc/group -p rwa
+-w /etc/passwd -p rwa
+-w /etc/shadow -p rwa
+-w /etc/sudoers -p rwa
+
+# monitor read-access of the following directory
+-w /etc/secret_directory -p r
+
+# lock the audit configuration to prevent any modification of this file
+#-e 2
