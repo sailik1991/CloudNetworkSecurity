@@ -1,0 +1,77 @@
+vulProperty('CVE-2008-5161',remoteExploit,privEscalation).
+
+vulProperty('CVE-2008-5161',remoteExploit,privEscalation).
+
+vulProperty('CVE-2016-0128',remoteExploit,privEscalation).
+
+vulProperty('CVE-2015-1635',remoteExploit,privEscalation).
+
+vulProperty('CVE-2015-1635',remoteExploit,privEscalation).
+
+vulProperty('CVE-2011-0657',remoteExploit,privEscalation).
+
+vulProperty('CVE-2011-0657',remoteExploit,privEscalation).
+
+vulExists('192.168.0.9','CVE-1999-0524',mac_os).
+
+vulExists('192.168.0.7','CVE-1999-0524',mac_os).
+
+vulExists('192.168.0.6','CVE-1999-0524',mac_os).
+
+vulExists('192.168.0.9','CVE-2008-5161',openssh).
+
+vulExists('192.168.0.7','CVE-2008-5161',openssh).
+
+vulExists('192.168.0.6','CVE-2016-0128',windows_10).
+
+vulExists('192.168.0.6','CVE-2015-1635',windows_7).
+
+vulExists('192.168.0.6','CVE-2011-0657',windows_2003_server).
+
+cvss('CVE-1999-0524',l).
+
+cvss('CVE-1999-0524',l).
+
+cvss('CVE-1999-0524',l).
+
+cvss('CVE-2008-5161',h).
+
+cvss('CVE-2008-5161',h).
+
+cvss('CVE-2016-0128',m).
+
+cvss('CVE-2015-1635',l).
+
+cvss('CVE-2011-0657',l).
+
+networkServiceInfo('192.168.0.9',openssh,tcp,'22',someUser).
+
+networkServiceInfo('192.168.0.9',openssh,tcp,'22',someUser).
+
+networkServiceInfo('192.168.0.7',openssh,tcp,'22',someUser).
+
+networkServiceInfo('192.168.0.7',openssh,tcp,'22',someUser).
+
+networkServiceInfo('192.168.0.6',windows_10,tcp,'49157',someUser).
+
+networkServiceInfo('192.168.0.6',windows_7,tcp,'80',someUser).
+
+networkServiceInfo('192.168.0.6',windows_7,tcp,'80',someUser).
+
+networkServiceInfo('192.168.0.6',windows_2003_server,udp,'5355',someUser).
+
+networkServiceInfo('192.168.0.6',windows_2003_server,udp,'5355',someUser).
+
+inCompetent('192.168.0.9_victim').
+hasAccount('192.168.0.9_victim', '192.168.0.9', user).
+attackerLocated(internet).
+attackGoal(execCode('192.168.0.9', _)).
+inCompetent('192.168.0.7_victim').
+hasAccount('192.168.0.7_victim', '192.168.0.7', user).
+attackerLocated(internet).
+attackGoal(execCode('192.168.0.7', _)).
+inCompetent('192.168.0.6_victim').
+hasAccount('192.168.0.6_victim', '192.168.0.6', user).
+attackerLocated(internet).
+attackGoal(execCode('192.168.0.6', _)).
+hacl(_,_,_,_).
