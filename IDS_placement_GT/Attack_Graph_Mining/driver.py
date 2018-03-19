@@ -23,7 +23,7 @@ def main(k):
     s += s_d.strip()
     s += '\n{}'.format(s_a)
     
-    f = open('BSSG_input.txt','r')
+    f = open('BSSG_input.txt','w')
     f.write(s.strip())
     f.close()
 
